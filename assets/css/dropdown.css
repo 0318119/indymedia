@@ -1,0 +1,257 @@
+
+/* Drop Down Menu Section */
+  * {
+    box-sizing: border-box;
+  }
+  a:focus {
+    outline: none;
+    position: relative;
+  }
+  a:focus:after {
+    width: 50px;
+  }
+  .menu a:after {
+    content: "";
+    background: #fbfbfb;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    height: 3px;
+    width: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+  }
+ 
+  .menu {
+    margin-top: 50px !important;
+    position: fixed !important;
+    z-index: 1;
+    top: auto !important;
+    right: 0;
+   
+    width: 100% !important;
+  }
+  .menu > ol {
+    list-style: none;
+    /* margin: -50px 0%; */
+    margin-top: 68px;
+    padding: 0;
+    width: 100% !important;
+    background: #00000075;
+    height: 61px;
+  }
+
+  .menu > ol.ol_div{
+    margin-top: 48px;
+    background: black;
+  }
+
+  .menu > ol > li {
+    margin-bottom: 1px;
+    position: relative;
+    transition: 0.5s;
+    width: 100%;
+  }
+  .menu > ol > li a {
+    color: #fbfbfb;
+    display: block;
+    padding: 15px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    font-weight: 600;
+  }
+  .menu > ol > li a:not(:last-child):before {
+    /* content: "\f078"; */
+    font-family: fontAwesome;
+    font-size: 0.75em;
+    line-height: 50px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .menu > ol > li:focus,
+  .menu > ol > li:focus-within,
+  .menu > ol > li:hover {
+    z-index: 100;
+  }
+  .menu > ol > li:focus:after,
+  .menu > ol > li:focus:after,
+  .menu > ol > li:hover:after {
+    background: white;
+    max-width: 800px;
+  }
+  .menu > ol > li:focus .sub-menu,
+  .menu > ol > li:focus-within .sub-menu {
+    max-height: 500px;
+  }
+  .menu > ol > li:focus a:before,
+  .menu > ol > li:focus-within a:before {
+    transform: rotate(-180deg);
+  }
+  .menu > ol > li:after {
+    background: #3c3c3c;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.5s;
+    max-width: 0;
+    overflow: hidden;
+  }
+  .menu > ol .sub-menu {
+    margin-left: 22.5px;
+    list-style: none;
+    max-height: 0px;
+    overflow: hidden;
+    padding-left: 7.5px;
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  .menu > ol .sub-menu li {
+    font-size: 0.9em;
+  }
+  .menu > ol .sub-menu li:hover,
+  .menu > ol .sub-menu li a:focus {
+    background: rgba(60, 60, 60, 0.3);
+  }
+  .menu > ol .sub-menu li a:after {
+    bottom: 5px;
+    height: 1px;
+  }
+  .menu > ol .sub-menu li a:hover:after,
+  .menu > ol .sub-menu li a:focus:after {
+    width: 15px;
+  }
+
+  @media (max-width: 1688px){
+    .menu > ol > li {
+      width: unset !important;
+      padding: 0 25px;  
+    }
+    .menu > ol > li a {
+      padding: 15px 0 !important;
+    }
+  }
+  @media (max-width: 1688px){
+    .menu > ol > li {
+      padding: 0 20px;  
+    }
+  }
+  @media (max-width: 1221px){
+    .menu > ol > li {
+      padding: 0 10px;  
+    }
+    .menu > ol > li a {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 1100px){
+    .menu {
+      display: none;
+    }
+    .navicon{
+      display: block;
+      position: absolute;
+      right: 17px;
+      top: 36px;
+    }
+    .navicon a{
+      position: absolute !important;
+      border: 0 !important;
+    }
+  }
+  @media (min-width: 600px) {
+    a:focus,
+    a:hover {
+      position: relative;
+    }
+    a:focus:after,
+    a:hover:after {
+      width: 50px;
+    }
+    a:after {
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .menu {
+      margin: 0;
+      margin-top: 40vh;
+    }
+    .menu > ol {
+      display: block;
+      max-width: none;
+      text-align: center;
+    }
+    .menu > ol > li {
+      border-left: 0;
+      display: inline-block;
+      margin-left: -5px;
+      vertical-align: top;
+      width: 120px;
+    }
+    .menu > ol > li:hover:after,
+    .menu > ol > li:focus:after,
+    .menu > ol > li:focus-within:after {
+      background: black;
+      border-radius: 3px;
+      top: 0px;
+      bottom: -15px;
+      left: -15px;
+      right: -15px;
+    }
+    .menu > ol > li:hover .sub-menu,
+    .menu > ol > li:focus .sub-menu,
+    .menu > ol > li:focus-within .sub-menu {
+      max-height: 750px;
+    }
+    .menu > ol > li a:not(:last-child):before {
+      right: 12.5px;
+    }
+    .menu > ol > li:hover a:before {
+      transform: rotate(-180deg);
+    }
+    .menu > ol .sub-menu {
+      border-left: 0;
+      margin: 15px -15px -15px;
+      padding-left: 0;
+    }
+  }
+  @media (min-width: 775px) {
+    .menu > ol > li {
+      width: 170px;
+      /* background: #4ECDC4; */
+    }
+    .menu > ol > li a:not(:last-child):before {
+      right: 25px;
+    }
+  }
+  
+
+
+/* Swervices Slider section */
+.slider-same{
+  position: relative;
+}
+
+.slider-same::after{
+  position: absolute;
+ content: "";
+  top: 10%;
+  left: 5%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.199);
+}
+
+.tab-pane{
+ border-radius: 20px 0 20 0 ;
+}
